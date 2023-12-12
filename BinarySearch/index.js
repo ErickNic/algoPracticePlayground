@@ -4,7 +4,6 @@ class BinarySearch{
     constructor(OriginalArray,value){
         this.OriginalArray =  OriginalArray;
         this.ValueToSearch = value;
-        this.fleetingArray = OriginalArray;
         this.indexOfValue = undefined;
         this.first= 0;
         this.last= OriginalArray.length -1;
@@ -33,20 +32,18 @@ class BinarySearch{
                 this.first = this.mid;
                 this.mid = Math.round((originalMid+this.last)/2)
             }else{
-                console.log({mid:this.mid,first:this.first,last:this.last});
                 this.last = this.mid;
-                this.fleetingArray = this.fleetingArray.filter((value,index)=>index<=this.last);
-                this.mid = Math.round(Math.round((this.fleetingArray.length-1)/2));
+                this.mid = Math.round(this.last/2);
             }
             /* i++; */
         }
     }
 }
 
-const xd = new BinarySearch([1,2,3,4,5,6,7,8,9],7);
+const xd = new BinarySearch([1,2,3,4,5,6,7,8,9,10,14,53,58],14);
 
 xd.FindIndexOfValue()
-console.log(xd.FindIndexOfValue())
+/* console.log(xd.FindIndexOfValue()) */
 /* console.log(xd) */
 /* console.log(xd.FindIndexOfValue()); */
 console.log(xd.ValueReference())
